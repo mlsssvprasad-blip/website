@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SEEE – Events</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="seee.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+
+<header class="sub-header">
+  <nav class="navbar">
+    <a href="seee.html" class="brand">
+      <img src="logo.jpeg" alt="SEEE Logo" class="logo">
+    </a>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="hamburger">&#9776;</label>
+
+    <div class="nav-links">
+      <label for="nav-toggle" class="close">&times;</label>
+      <ul>
+        <li><a href="seee.html">HOME</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="events.html" class="active">EVENTS</a></li>
+        <li><a href="updates.html">UPDATES</a></li>
+        <li><a href="college.html">COLLEGE</a></li>
+         <li><a href="board.html" class="active">BOARD</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="sub-header-content">
+    <h1>Events</h1>
+    <p>Technical, cultural and sports events conducted by SEEE.</p>
+  </div>
+</header>
+
+<section class="events-section">
+  <div class="events-container">
+
+    <div class="filter-row">
+      <button class="filter-btn active" data-filter="All">All</button>
+      <button class="filter-btn" data-filter="Technical">Technical</button>
+      <button class="filter-btn" data-filter="Cultural">Cultural</button>
+      <button class="filter-btn" data-filter="Sports">Sports</button>
+    </div>
+
+    <h2>Upcoming Events</h2>
+    <div id="upcomingEvents" class="events-grid"></div>
+
+    <h2>Past Events</h2>
+    <div id="pastEvents" class="events-grid"></div>
+
+  </div>
+</section>
+
+</body>
+</html>

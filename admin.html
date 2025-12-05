@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SEEE Admin Panel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="seee.css">
+  <script defer src="script.js"></script>
+</head>
+<body class="admin-page">
+
+<!-- ================= HEADER / NAV ================= -->
+<header class="sub-header admin-header">
+  <nav class="navbar">
+    <!-- Brand -->
+    <a href="seee.html" class="brand">
+      <img src="logo.jpeg" alt="SEEE Logo" class="logo">
+    </a>
+
+    <!-- Mobile nav toggle -->
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="hamburger">&#9776;</label>
+
+    <!-- Nav links -->
+    <div class="nav-links">
+      <label for="nav-toggle" class="close">&times;</label>
+      <ul>
+        <li><a href="seee.html">HOME</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="events.html">EVENTS</a></li>
+        <li><a href="updates.html">UPDATES</a></li>
+        <li><a href="college.html">COLLEGE</a></li>
+        <li><a href="board.html">BOARD</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="sub-header-content">
+    <h1>SEEE Admin Panel</h1>
+    <p>Manage events, updates and board members for SEEE Club.</p>
+  </div>
+</header>
+
+<!-- ================= MAIN ADMIN CONTENT ================= -->
+<section class="admin-section">
+  <div class="admin-wrapper">
+    <h2>Manage Events, Updates & Board</h2>
+    <p class="admin-info">
+      Only authorised admin should use this page. All data is stored in this browser (localStorage).
+    </p>
+
+    <div class="admin-grid">
+
+      <!-- ========= EVENTS CARD ========= -->
+      <div class="admin-card">
+        <h3>Add / Edit Event</h3>
+
+        <!-- hidden index for editing -->
+        <input type="hidden" id="eventEditIndex" value="-1">
+
+        <label>Event Title</label>
+        <input type="text" id="eventTitle" placeholder="Ex: Power Tech Fusion Expo">
+
+        <label>Date</label>
+        <input type="date" id="eventDate">
+
+        <label>Type</label>
+        <select id="eventType">
+          <option>Technical</option>
+          <option>Cultural</option>
+          <option>Sports</option>
+          <option>Other</option>
+        </select>
+
+        <label>Description</label>
+        <textarea id="eventDesc" rows="4" placeholder="Short description of the event"></textarea>
+
+        <label>Images (you can select multiple)</label>
+        <input type="file" id="eventImages" accept="image/*" multiple>
+
+        <button id="eventSaveBtn">Save Event</button>
+        <button id="eventResetBtn" type="button">Reset Form</button>
+        <p id="eventMsg" class="admin-msg"></p>
+
+        <h4>Existing Events</h4>
+        <div id="adminEventsList"></div>
+      </div>
+
+      <!-- ========= UPDATES CARD ========= -->
+      <div class="admin-card">
+        <h3>Add / Edit Update</h3>
+
+        <!-- hidden index for editing -->
+        <input type="hidden" id="updEditIndex" value="-1">
+
+        <label>Title</label>
+        <input type="text" id="updTitle" placeholder="Ex: Exam Time-table, Power Tech Notice">
+
+        <label>Date</label>
+        <input type="date" id="updDate">
+
+        <label>Description</label>
+        <textarea id="updDesc" rows="6"
+          placeholder="Paste notice text here. URLs like https://... will automatically become buttons."></textarea>
+
+        <label>Image (optional)</label>
+        <input type="file" id="updImage" accept="image/*">
+
+        <button id="updSaveBtn">Save Update</button>
+        <button id="updResetBtn" type="button">Reset Form</button>
+        <p id="updMsg" class="admin-msg"></p>
+
+        <h4>Existing Updates</h4>
+        <div id="adminUpdatesList"></div>
+      </div>
+
+      <!-- ========= BOARD MEMBERS CARD ========= -->
+      <div class="admin-card">
+        <h3>Add / Edit Board Member</h3>
+
+        <!-- hidden index for editing -->
+        <input type="hidden" id="boardEditIndex" value="-1">
+
+        <label>Name</label>
+        <input type="text" id="boardName" placeholder="Ex: M. Ganesh">
+
+        <label>Role</label>
+        <select id="boardRole">
+          <option>President</option>
+          <option>Vice President</option>
+          <option>Lead Coordinator</option>
+          <option>Secretary</option>
+          <option>Joint Secretary</option>
+          <option>Treasurer</option>
+          <option>People Relation Manager</option>
+          <option>Event Coordinator</option>
+          <option>Technical Coordinator</option>
+          <option>Cultural Coordinator</option>
+          <option>Sports Coordinator</option>
+          <option>Design Coordinator</option>
+          <option>Photographer</option>
+          <option>Other</option>
+        </select>
+
+        <label>Year / Class (optional)</label>
+        <input type="text" id="boardYear" placeholder="Ex: III B.Tech EEE">
+
+        <label>Photo</label>
+        <input type="file" id="boardImage" accept="image/*">
+
+        <button id="boardSaveBtn">Save Member</button>
+        <button id="boardResetBtn" type="button">Reset Form</button>
+        <p id="boardMsg" class="admin-msg"></p>
+
+        <h4>Existing Board Members</h4>
+        <div id="adminBoardList"></div>
+      </div>
+
+    </div> <!-- /.admin-grid -->
+  </div>   <!-- /.admin-wrapper -->
+</section>
+
+</body>
+</html>
+
+
